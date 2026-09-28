@@ -5,78 +5,140 @@
 }
 
 :root {
-  --primary: #000;
-  --secondary: #000;
-  --text: #000;
-  --muted: #000;
-  --background: #fff;
+  --emerald: #4c5f2f;
+  --green: #3cb043;
+  --pine: #1a2b08;
+  --background: #fafbf6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 body {
-  font-family: var(--font);
-  color: var(--text);
-  background: var(--background);
+  background-color: var(--background);
 }
 
+/*HEADER*/
 .navbar {
-  padding: 20px 40px;
+  height: 74px;
+  width: 1160px;
+  margin: auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  color: var(--text);
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: var(--emerald);
 }
 
-.brand img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
+.navbar nav {
+  display: flex;
+  gap: 32px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--emerald);
 }
 
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, var(--green), var(--emerald));
+  color: white;
+}
+
+.navbar nav a {
+  transition: 0.25s;
+}
+
+.navbar nav a:hover {
+  color: var(--green);
+}
+
+/*MAIN*/
 .hero {
   min-height: 600px;
-  padding: 80px;
+  max-width: 1160px;
+  margin: auto;
+  padding: 40px 28px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   align-items: center;
   gap: 60px;
 }
 
-.badge {
-  color: var(--primary);
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: 7px;
+  padding-bottom: 5%;
+  color: var(--emerald);
 }
 
-.hero h1 {
-  font-size: 56px;
-  color: var(--text);
-  margin: 20px 0;
-}
-
-.hero p {
-  color: var(--muted);
-  line-height: 1.7;
+.hero-content p {
+  max-width: 550px;
+  font-size: 16px;
+  line-height: 1.6;
+  padding-bottom: 40px;
+  color: var(--pine);
 }
 
 .btn {
-  margin-top: 25px;
-  padding: 14px 25px;
-  border: 0;
-  border-radius: 999px;
   color: white;
-  background: linear-gradient(
-    100deg,
-    var(--primary),
-    var(--secondary)
-  );
+  background-color: var(--pine);
+  padding: 13px 30px;
+  border: none;
+  border-radius: 25px;
+  min-width: 160px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
   cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  background-color: var(--emerald);
+}
+
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 550px;
+}
+
+.hero-image div {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  font-size: 180px;
+  font-weight: 400;
+  line-height: 0.8;
+  color: #dcddda;
+  z-index: 1;
 }
 
 .hero-image img {
+  position: absolute;
   width: 100%;
-  max-width: 500px;
+  height: auto;
+  left: 0;
+  top: 60px;
+  z-index: 2;
 }
