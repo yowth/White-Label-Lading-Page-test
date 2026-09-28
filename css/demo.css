@@ -1,10 +1,23 @@
 /*CSS HEADER*/
 html {
+  scroll-behavior: smooth;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-  background-color: rgb(127, 255, 212);
+.X-vertical {
+  justify-content: center;
+}
+
+.Y-vertical {
+  align-items: center;
+}
+
+.menu-bar {
+  max-width: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
 }
 
 .flex {
@@ -12,7 +25,10 @@ body {
 }
 
 .menu {
+  max-width: 100%;
   list-style-type: none;
+  background-color: aquamarine;
+  border-radius: 10px;
 }
 .menu img {
   max-width: 100%;
@@ -22,34 +38,37 @@ body {
 .menu > li {
   color: green;
   margin-left: 0px;
-  padding: 50px;
-  margin-top: 0px;
-  padding-top: 0px;
+  padding: 10px;
 }
 .menu > li:first-child {
   margin-right: auto;
-  padding: 0px;
+  padding-left: 0;
+  left: 0;
 }
-.menu > li:nth-last-child {
-  margin-left: auto;
-}
+
 .menu a {
   text-decoration: none;
   color: green;
 }
 
 /*CSS body*/
+section {
+  margin-top: 100px;
+  margin-bottom: 150px;
+}
 .brand-logo {
   position: relative;
+  min-height: 350px;
 }
 
 .brand-logo img {
   position: relative;
   max-width: 100%;
-  width: 30rem;
+  width: 18rem;
   rotate: -90deg;
   transform: scaleY(-1);
   z-index: 2;
+  margin-bottom: 100px;
 }
 
 .Details > div {
@@ -65,11 +84,11 @@ body {
 
 .brand-major {
   text-align: center;
-  color: gray;
-  font-size: 100px;
+  color: #e0e0e0;
+  font-size: 80px;
   position: absolute;
-  padding-left: 100px;
-  z-index: 1;
+  padding-left: 0px;
+  z-index: -11;
 }
 
 .btn {
@@ -77,4 +96,69 @@ body {
   background-color: green;
   border-radius: 10px;
   color: white;
+}
+
+/*CSS products*/
+.product {
+  background-size: cover;
+  margin: 20px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.p1 {
+  background-image: url(../images/b1.webp);
+}
+
+.product p {
+  display: flex;
+  color: white;
+  align-items: center;
+}
+.product img {
+  max-width: 100%;
+  width: 1290px;
+}
+
+.p2 {
+  background-image: url(../images/b2.jpg);
+}
+
+.p3 {
+  background-image: url(../images/b3.jpeg);
+}
+
+@keyframes scroll-app-odd {
+  from {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes scroll-app-even {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.product:nth-child(odd) {
+  animation: scroll-app-odd linear;
+  /*chỉ áp dụng animation khi thành phần hiện thị lên màn hình*/
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+.product:nth-child(even) {
+  animation: scroll-app-even linear;
+  /*chỉ áp dụng animation khi thành phần hiện thị lên màn hình*/
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
