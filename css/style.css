@@ -58,6 +58,7 @@ body {
 }
 
 .navbar nav a {
+  cursor: pointer;
   transition: 0.25s;
 }
 
@@ -247,45 +248,5 @@ body {
   .btn {
     width: 100%;
     max-width: 200px;
-  }
-}
-
-/*SMALL MOBILE*/
-@media (max-width: 480px) {
-  .navbar {
-    padding: 14px 16px;
-  }
-
-  .hero {
-    padding: 15px 16px;
-    gap: 20px;
-  }
-
-  .hero-image {
-    height: 320px;
-  }
-
-  .hero-image div {
-    left: 5px;
-    top: 5px;
-    font-size: 85px;
-  }
-
-  .hero-image img {
-    top: 35px;
-  }
-
-  .hero-content h1 {
-    font-size: 28px;
-    letter-spacing: 3px;
-  }
-
-  .hero-content p {
-    font-size: 14px;
-  }
-
-  .btn {
-    width: 100%;
-    max-width: none;
   }
 }
