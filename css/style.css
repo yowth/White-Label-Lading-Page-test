@@ -1,14 +1,8 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 :root {
-  --emerald: #4c5f2f;
-  --green: #3cb043;
-  --pine: #1a2b08;
-  --background: #fafbf6;
+  --theme: #000000;
+  --hover: #000000;
+  --text: #000000;
+  --background: #ffffff;
 }
 
 html {
@@ -42,7 +36,7 @@ body {
   font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.4px;
-  color: var(--emerald);
+  color: var(--theme);
 }
 
 .navbar nav {
@@ -50,7 +44,7 @@ body {
   gap: 32px;
   font-size: 15px;
   font-weight: 600;
-  color: var(--emerald);
+  color: var(--theme);
 }
 
 .brand-mark {
@@ -59,7 +53,7 @@ body {
   width: 27px;
   height: 27px;
   border-radius: 9px;
-  background: linear-gradient(135deg, var(--green), var(--emerald));
+  background: linear-gradient(135deg, var(--theme), var(--text));
   color: white;
 }
 
@@ -68,7 +62,7 @@ body {
 }
 
 .navbar nav a:hover {
-  color: var(--green);
+  color: var(--hover);
 }
 
 /*MAIN*/
@@ -83,12 +77,13 @@ body {
   gap: 60px;
 }
 
+/*HERO-CONTENT*/
 .hero-content h1 {
   font-size: 48px;
   font-weight: 400;
   letter-spacing: 7px;
   padding-bottom: 5%;
-  color: var(--emerald);
+  color: var(--theme);
 }
 
 .hero-content p {
@@ -96,12 +91,12 @@ body {
   font-size: 16px;
   line-height: 1.6;
   padding-bottom: 40px;
-  color: var(--pine);
+  color: var(--text);
 }
 
 .btn {
   color: white;
-  background-color: var(--pine);
+  background-color: var(--theme);
   padding: 13px 30px;
   border: none;
   border-radius: 25px;
@@ -114,13 +109,15 @@ body {
 }
 
 .btn:hover {
-  background-color: var(--emerald);
+  background-color: var(--hover);
 }
 
+/*HERO-IMAGE*/
 .hero-image {
   position: relative;
   width: 100%;
   height: 550px;
+  overflow: hidden;
 }
 
 .hero-image div {

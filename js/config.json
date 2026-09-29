@@ -1,0 +1,19 @@
+{
+  "text": {
+    "page_title": "Fashion",
+    "header_text": "REALLY GREAT SITE",
+    "background_image_text": "FASHION",
+    "hero_title": "ORAGANIC FASHION",
+    "hero_description": "I know you couldn't damage the monster last time, and that the destroyer may not be able to repair itself by the time it is needed. But who's to say you can't aid it? Or mimic those who will seek to rebuild God, and acquire outside help? Working together, nothing is impossible."
+  },
+  "img": {
+    "page_icon": "img/Big_oge.ico",
+    "hero_image": "img/agnes.png"
+  },
+  "colors": {
+    "background_color": "#fafbf6",
+    "theme_color": "#4c5f2f",
+    "text_color": "#1a2b08",
+    "hover_color": "#3cb043"
+  }
+}
