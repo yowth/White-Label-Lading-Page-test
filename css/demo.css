@@ -4,6 +4,18 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafbf6;
+}
+
+.flex {
+  display: flex;
+}
+
 .X-vertical {
   justify-content: center;
 }
@@ -13,25 +25,27 @@ html {
 }
 
 .menu-bar {
-  max-width: 100%;
   width: 100%;
   position: fixed;
   top: 0;
-  overflow: hidden;
+  left: 0;
   z-index: 1000;
-}
-
-.flex {
-  display: flex;
+  padding: 10px 20px;
 }
 
 .menu {
-  max-width: 100%;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  gap: 25px;
   list-style-type: none;
   background: rgb(255, 255, 255, 0.1);
-  box-shadow: 10px 10px 30px rgb(0, 0, 0, 0.5);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
   border-radius: 10px;
+  display: flex;
+  align-items: center;
 }
 .menu img {
   max-width: 100%;
@@ -39,19 +53,21 @@ html {
 }
 
 .menu > li {
-  margin-left: 0px;
+  font-size: 15px;
+  font-weight: 600;
   padding: 10px;
 }
 .menu > li:first-child {
-  color: green;
+  color: #4c5f2f;
   margin-right: auto;
   padding-left: 0;
-  left: 0;
 }
 
 .menu a {
   text-decoration: none;
-  color: green;
+  color: #4c5f2f;
+  font-size: 15px;
+  font-weight: 600;
   position: relative;
   transition: color 0.3s ease;
 }
@@ -63,7 +79,7 @@ html {
   width: 0;
   height: 2px;
   background: black;
-  bottom: 0;
+  bottom: -3px;
   left: 50%;
   transition: all 0.3s ease;
 }
@@ -74,8 +90,11 @@ html {
 }
 
 /*CSS body*/
+.brand-details {
+  padding-top: 100px;
+}
+
 section {
-  margin-top: 100px;
   margin-bottom: 150px;
 }
 
@@ -102,7 +121,18 @@ section {
   margin-left: auto;
 }
 .Detail h1 {
-  color: green;
+  color: #4c5f2f;
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: 7px;
+  padding-bottom: 5%;
+}
+
+.Detail p {
+  font-size: 16px;
+  line-height: 1.6;
+  padding-bottom: 40px;
+  color: #1a2b08;
 }
 
 .brand-major {
@@ -115,71 +145,104 @@ section {
 }
 
 .btn {
-  margin-top: 5rem;
-  background-color: green;
-  border-radius: 10px;
+  background-color: #4c5f2f;
   color: white;
+  padding: 13px 30px;
+  border: none;
+  border-radius: 25px;
+  min-width: 160px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  background-color: #3cb043;
 }
 
 /*CSS about us*/
+.infor {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+}
+
 .maincontainer {
   position: relative;
-  flex: 1;
+  flex: 1 1 0;
   height: 320px;
-  margin: 20px;
+  margin: 0;
+  perspective: 1000px;
 }
 
 .card {
   position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   /*dùng để lật cả 2 mặt trong không gian 3d, nếu ko có thì chỉ lật ngược 1 mặt*/
   transform-style: preserve-3d;
-  transition: all 0.5s ease;
+  transition: transform 0.5s ease;
+  will-change: transform;
 }
 
-.card:hover {
+.maincontainer:hover .card {
   transform: rotateY(180deg);
 }
 
-.front {
+.front,
+.back {
   position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
-  box-shadow: 10px 10px 30px rgb(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
+  box-sizing: border-box;
   border-radius: 10px;
+  backface-visibility: hidden;
+}
+
+.front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: wheat;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position: center;
 }
 .f1 {
   background-image: url(../images/c1.webp);
 }
 
 .f2 {
-  background: url(../images/b2.jpg);
+  background-image: url(../images/b2.jpg);
 }
 
 .f3 {
-  background: url(../images/b3.jpeg);
+  background-image: url(../images/b3.jpeg);
 }
 .front > h2 {
-  position: relative;
+  margin: 5px auto;
   text-align: center;
-  top: 25%;
 }
 
 .back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  background-color: #aaaaaa;
-  box-shadow: 10px 10px 30px rgb(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 30px;
+  background-color: #aaaaaa;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  transform: rotateY(180deg);
+  overflow: auto;
 }
 /*CSS products*/
 .product {
@@ -196,15 +259,16 @@ section {
 .product p {
   display: flex;
   color: white;
+  justify-content: center;
   align-items: center;
+  padding: 40px;
+  line-height: 1.6;
 }
 .product img {
-  max-width: 100%;
-  width: 1300px;
-  margin: 0px;
-  padding: 0px;
-  display: flex;
-  align-items: center;
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  display: block;
 }
 
 .p2 {
@@ -248,4 +312,206 @@ section {
   /*chỉ áp dụng animation khi thành phần hiện thị lên màn hình*/
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
+}
+
+/*REPONSIVE*/
+@media (max-width: 1024px) {
+  /*HEADER*/
+  .menu-bar {
+    padding: 10px 15px;
+  }
+
+  .menu {
+    width: 95%;
+    gap: 15px;
+    padding: 0 15px;
+  }
+
+  .menu > li {
+    padding: 8px 5px;
+    font-size: 14px;
+  }
+
+  .menu a {
+    font-size: 14px;
+  }
+
+  /*HERO*/
+  .brand-details {
+    padding-top: 120px;
+  }
+
+  .Details {
+    padding: 0 40px;
+  }
+
+  .brand-logo img {
+    width: 15rem;
+  }
+
+  .brand-major {
+    font-size: 65px;
+  }
+
+  .Detail h1 {
+    font-size: 40px;
+    letter-spacing: 5px;
+  }
+
+  /*ABOUT US*/
+  .infor {
+    width: 90%;
+    gap: 20px;
+  }
+
+  .maincontainer {
+    height: 300px;
+  }
+
+  .front > h2 {
+    font-size: 20px;
+  }
+
+  .back {
+    padding: 25px;
+    font-size: 14px;
+  }
+
+  /*PRODUCTS*/
+  .product p {
+    padding: 30px;
+  }
+
+  .product img {
+    max-width: 500px;
+  }
+}
+
+/*MOBILE*/
+@media (max-width: 768px) {
+  /*HEADER*/
+  .menu-bar {
+    padding: 8px 10px;
+  }
+
+  .menu {
+    width: 100%;
+    max-width: none;
+    padding: 5px 8px;
+    gap: 8px;
+    border-radius: 8px;
+  }
+
+  .menu > li {
+    padding: 7px 3px;
+    font-size: 11px;
+  }
+
+  .menu > li:first-child {
+    font-size: 11px;
+  }
+
+  .menu a {
+    font-size: 11px;
+  }
+
+  /*HERO*/
+  .brand-details {
+    padding-top: 110px;
+  }
+
+  .Details {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 30px;
+    text-align: center;
+  }
+
+  .Details > div {
+    width: 100%;
+  }
+
+  .brand-logo {
+    min-height: 280px;
+  }
+
+  .brand-logo img {
+    width: 13rem;
+    margin-bottom: 60px;
+  }
+
+  .brand-major {
+    font-size: 60px;
+  }
+
+  .Detail {
+    margin-left: 0;
+  }
+
+  .Detail h1 {
+    font-size: 32px;
+    letter-spacing: 4px;
+    padding-bottom: 20px;
+  }
+
+  .Detail p {
+    font-size: 15px;
+    padding-bottom: 25px;
+  }
+
+  .btn {
+    padding: 12px 25px;
+    min-width: 150px;
+  }
+
+  /*ABOUT US*/
+  .infor {
+    width: 85%;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .maincontainer {
+    width: 100%;
+    height: 300px;
+    flex: none;
+  }
+
+  .front > h2 {
+    font-size: 22px;
+  }
+
+  .back {
+    padding: 25px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /*PRODUCTS*/
+  .product {
+    flex-direction: column;
+    margin: 20px 0;
+  }
+
+  .product p {
+    width: 100%;
+    padding: 35px 25px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .product > div {
+    width: 100%;
+  }
+
+  .product img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /*SPACING*/
+  section {
+    margin-bottom: 100px;
+  }
 }
